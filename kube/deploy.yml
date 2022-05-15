@@ -21,7 +21,7 @@ spec:
           name: website
           envFrom:
             - secretRef:
-                name: cerus-webapp-secrets
+                name: cerus-website-secrets
           ports:
             - containerPort: 3000
               name: http

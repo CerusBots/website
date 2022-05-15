@@ -15,6 +15,14 @@ export default defineNuxtConfig({
             }
         }
     },
+    vite: {
+        define: {
+            'process.env.SENTRY_DSN': `"${process.env.SENTRY_DSN}"`
+        },
+        optimizeDeps: {
+            include: ['@sentry/vue', '@sentry/tracing']
+        }
+    },
     intlify: {
         vueI18n: {
             locale: 'en',

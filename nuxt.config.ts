@@ -1,9 +1,17 @@
 import { defineNuxtConfig } from 'nuxt'
+import { URL } from 'url'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-	debug: true,
-	modules: ['@midstallsoftware/vista'],
+	modules: [
+		'@midstallsoftware/vista',
+		process.env.ENABLE_ANALYTICS === '1' && 'vue-plausible',
+	].filter((e) => !!e),
+	plausible: {
+		domain:
+			process.env.ENABLE_ANALYTICS === '1' &&
+			new URL(process.env.ANALYTICS_URL).hostname,
+	},
 	vista: {
 		branding: {
 			kind: 'product',

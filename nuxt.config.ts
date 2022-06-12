@@ -1,5 +1,4 @@
 import { defineNuxtConfig } from 'nuxt'
-import { URL } from 'url'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -8,9 +7,11 @@ export default defineNuxtConfig({
 		process.env.ENABLE_ANALYTICS === '1' && 'vue-plausible',
 	].filter((e) => !!e),
 	plausible: {
-		domain:
-			process.env.ENABLE_ANALYTICS === '1' &&
-			new URL(process.env.ANALYTICS_URL).hostname,
+		domain: process.env.DOMAIN,
+		apiHost:
+			process.env.ENABLE_ANALYTICS === '1'
+				? `http://${process.env.ANALYTICS_HOST}`
+				: undefined,
 	},
 	vista: {
 		branding: {

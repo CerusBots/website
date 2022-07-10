@@ -2,3 +2,4 @@
 .nuxt
 kube
 node_modules
+deploy

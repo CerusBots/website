@@ -13,8 +13,8 @@
 		</div>
 		<div class="justify-center py-8 h-fit">
 			<div
-				class="grid grid-rows-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-flow-col xl:grid-flow-col gap-4">
-				<div v-for="i in 3" :key="i" class="row-auto col-span-4 card bg-base-200">
+				class="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row gap-4">
+				<div v-for="i in 2" :key="i" class="basis-1/2 card bg-base-200">
 					<div class="card-body">
 						<h2 class="card-title">{{ $i18n.t(`card.${i}.title`) }}</h2>
 						<ul>
@@ -85,23 +85,6 @@ definePageMeta({
 					"3": {
 						"title": "Stripe",
 						"content": "One of the many alternatives to PayPal, Stripe handles everyone's payments on Cerus and many other services."
-					}
-				}
-			},
-			"3": {
-				"title": "FOSS Friendly",
-				"items": {
-					"1": {
-						"title": "Self-Hostable",
-						"content": "Cerus has been developed to allow anyone to deploy it on their own Kubernetes cluster. In a matter of minutes, you could be running just the bot runner to even the dashboard."
-					},
-					"2": {
-						"title": "Fully Open Source",
-						"content": "We developed Cerus and ensured its entire source code is available for everyone."
-					},
-					"3": {
-						"title": "Linux Friendly",
-						"content": "Cerus is developed and maintained on Linux machines, this ensures we use the best tools for the right job when developing Cerus."
 					}
 				}
 			}

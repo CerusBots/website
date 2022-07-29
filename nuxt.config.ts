@@ -1,3 +1,4 @@
+import { mdiHome, mdiCurrencyUsd } from '@mdi/js'
 import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -20,7 +21,20 @@ export default defineNuxtConfig({
 		},
 		layouts: {
 			default: {
-				links: [{ url: '/', icon: 'mdi-home', title: { key: 'page.home' } }],
+				links: [
+					{
+						url: '/',
+						icon: mdiHome,
+						title: { key: 'page.home' },
+						side: ['default', 'default'],
+					},
+					{
+						url: '/pricing',
+						icon: mdiCurrencyUsd,
+						title: { key: 'page.pricing' },
+						side: ['default', 'default'],
+					},
+				],
 			},
 		},
 	},
@@ -46,6 +60,7 @@ export default defineNuxtConfig({
 					},
 					page: {
 						home: 'Home',
+						pricing: 'Pricing',
 					},
 				},
 			},

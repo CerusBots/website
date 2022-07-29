@@ -1,11 +1,11 @@
 <template>
 	<div class="w-full min-w-full max-w-full">
-		<div class="hero min-h-[32rem] bg-base-200 px-8">
+		<div class="hero min-h-[32rem] bg-base-200 px-8 text-white">
 			<div class="hero-content text-center">
 				<div class="min-w-full max-w-full w-full">
 					<h1 class="text-5xl font-bold">{{ $i18n.t('hero.title') }}</h1>
 					<p class="py-6">{{ $i18n.t('hero.text') }}</p>
-					<a href="/pricing" class="btn btn-primary justify-end">{{
+					<a href="/pricing" class="btn btn-active btn-lg text-white justify-end">{{
 						$i18n.t('see-pricing')
 					}}</a>
 				</div>
